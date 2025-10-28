@@ -1,0 +1,19 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Portfolio collection - public read, authenticated write
+    match /portfolio/{document=**} {
+      // Anyone can read portfolio data
+      allow read: if true;
+      
+      // Only authenticated users can write/update
+      allow write, update, delete: if request.auth != null;
+    }
+    
+    // Default deny all other collections
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
