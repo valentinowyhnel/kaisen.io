@@ -260,7 +260,7 @@ We plan to add:
 
 ### Reporting Security Issues
 
-For security vulnerabilities, please email [security contact] instead of creating a public issue.
+For security vulnerabilities, please create a private security advisory on GitHub instead of creating a public issue. Go to the Security tab and click "Report a vulnerability".
 
 ## Review Process
 

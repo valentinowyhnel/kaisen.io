@@ -80,8 +80,8 @@ Vercel automatically deploys:
 
 3. **Build Settings**
    - Build command: `npm run build`
-   - Publish directory: `.next`
-   - Framework: Next.js
+   - Publish directory: Leave default (Netlify auto-detects for Next.js)
+   - Framework: Next.js (auto-detected)
 
 4. **Environment Variables**
    - Go to Site settings → Environment variables
@@ -311,7 +311,11 @@ Add to `layout.tsx`:
 ```tsx
 import { Analytics } from '@vercel/analytics/react';
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ 
+  children 
+}: { 
+  children: React.ReactNode 
+}) {
   return (
     <html>
       <body>
